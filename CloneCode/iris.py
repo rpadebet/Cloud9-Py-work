@@ -1,22 +1,26 @@
 # First, we'll import pandas, a data processing and CSV file I/O library
 import pandas as pd
+import os
 
+import seaborn
 # We'll also import seaborn, a Python graphing library
+
 import warnings # current version of seaborn generates a bunch of warnings that we'll ignore
 warnings.filterwarnings("ignore")
 import seaborn as sns
 import matplotlib.pyplot as plt
 sns.set(style="white", color_codes=True)
-
+os.chdir('/Users/rohitpittu/PycharmProjects/Cloud9-Py-work/CloneCode/')
 
 # Next, we'll load the Iris flower dataset, which is in the "../input/" directory
 iris = pd.read_csv("iris.csv") # the iris dataset is now a Pandas DataFrame
 iris = iris.rename(columns={'Unnamed: 0': 'Id'})
 # Let's see what's in the iris data - Jupyter notebooks print the result of the last thing you do
 iris.head()
-
 # Let's see how many examples we have of each species
 iris["Species"].value_counts()
+
+iris.head
 
 # The first way we can plot things is using the .plot extension from Pandas dataframes
 # We'll use this to make a scatterplot of the Iris features.
